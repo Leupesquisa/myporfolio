@@ -1,0 +1,7 @@
+com.leumanuel.woozydata
+com.leumanuel.woozydata.config
+com.leumanuel.woozydata.controller
+com.leumanuel.woozydata.model
+com.leumanuel.woozydata.repository
+com.leumanuel.woozydata.service
+com.leumanuel.woozydata.util

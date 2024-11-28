@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.leumanuel.woozydata"},{"l":"com.leumanuel.woozydata.config"},{"l":"com.leumanuel.woozydata.controller"},{"l":"com.leumanuel.woozydata.model"},{"l":"com.leumanuel.woozydata.repository"},{"l":"com.leumanuel.woozydata.service"},{"l":"com.leumanuel.woozydata.util"}];updateSearchResults();
