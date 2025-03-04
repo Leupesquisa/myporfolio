@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
-
+<link rel="stylesheet" href="like.css">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
@@ -52,7 +52,240 @@
 .header-text .btn2 {
     padding: 0.25em 0.75em; /* Adjust the padding for a smaller button */
     font-size: 0.75em; /* Adjust the font size for a smaller button */
-}</style>
+}
+
+      .projects {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            display: flex;
+            flex-direction: row-reverse; /* Inicialmente alinhado à direita */
+        }
+
+        .project-video {
+            width: 50%; /* Ajuste para ocupar metade da largura */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .project-video video {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .project-overlay {
+	
+            background: #233554;
+            color: white;
+            padding: 1rem;
+            border-radius: 15px;
+            margin: 10px;
+            max-width: 100% !important; /* Ajuste para ocupar menos espaço */
+            text-align: left;
+            position: relative;
+            font-size: 0.8rem;
+			height:60% !important;
+        }
+
+        /* Estilização do "chat" à direita */
+        .project-overlay.right::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            right: 20px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #233554;
+        }
+
+        /* Estilização do "chat" à esquerda */
+        .project-overlay.left::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #233554;
+        }
+
+        .tech-stack {
+            font-size: 0.875rem;
+            margin-top: 5px;
+            color: #64ffda;
+        }
+
+        .icons {
+            margin-top: 8px;
+            font-size: 1.2rem;
+        }
+
+        .icons span {
+            cursor: pointer;
+            margin-right: 10px;
+            transition: transform 0.2s;
+        }
+
+        .icons span:hover {
+            transform: scale(1.2);
+        }
+
+        /* Efeito de exibição ao rolar */
+        .project-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Inverte o layout para o segundo projeto */
+        .project-card.reverse {
+            flex-direction: row;
+        }
+
+
+.project-video-container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.project-post {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.post-header {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+	
+}
+
+.post-author {
+    font-weight: bold;
+    margin: 0;
+}
+
+.post-date {
+    color: #888;
+    font-size: 0.8em;
+}
+
+.post-content {
+    padding: 0 15px 15px;
+}
+
+.post-text {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  
+}
+
+.responsive-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+
+.video-maximize-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.video-maximize-btn:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.comment-section {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.comment-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.comment-section button {
+    padding: 5px 10px;
+    background-color: #00abf0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comment-section button:hover {
+    background-color: #008cba;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: flex-start;
+    padding: 15px;
+    gap: 10px;
+}
+
+.like-btn, .comment-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .project-post {
+        margin: 10px !important;
+    }
+}
+
+</style>
             <h1>Hi, I'm <span>Leu Manuel</span></h1>
 			 <p><small>Full Stack Developer | Data Analyst</small><br><a href="#about" class="btn btn2" ><small>Get to know me</small> </a></p>
 			
@@ -81,7 +314,9 @@ margin-left: 2.8rem;
                 <img src="images/file.jpeg">
 					
             </div>
+			
             <div class="about-col-2">
+			
                 <h1 class="sub-title">About Me </h1>
                <p style="text-align:justify;"> I am a seasoned Full Stack Developer with extensive expertise in Java, Python, PHP, API development, and various other technologies. My proficiency extends to credit risk model analysis, where I leverage my technical skills to create robust and secure applications. My approach to development is holistic, focusing not only on coding but also on understanding broader business objectives and user needs.</p>
 
@@ -491,7 +726,11 @@ Statistical Data Analysis</span>
                
             </div>
         </div>
-    </div>
+    
+	
+	</div>
+	
+	
 </div>
 
 <!-- ----------portfolio------------ -->
@@ -501,46 +740,199 @@ Statistical Data Analysis</span>
 		<p style="color: #ababab; text-align:justify;"><br>These full stack projects showcase complete integration between frontend and backend, utilizing a range of modern technologies. They include robust API architectures, advanced machine learning models, and big data solutions, exemplifying my ability to build comprehensive and scalable applications. All data used is fictional, ensuring complete privacy and adherence to ethical standards.
 </p>
 		
+
+
+
+
+
 		
-        <div class="work-list">
+		
+		<!-- Middle Column -->
+<!-- Middle Column  1-->
+<div class="w3-col m7 project-video-container">
+    <div class="w3-container w3-card-2 w3-white w3-round w3-margin project-post">
+        <div class="post-header">
+            <h4 class="post-author">JEndpoint – Visual Studio Code extension
+                
+            </h4>
+        </div>
+        <hr class="w3-clear">
+        <div class="post-content">
+            <p class="post-text"></p>
+            <div class="video-wrapper">
+                <video id="churnVideo" class="responsive-video" autoplay loop muted playsinline>
+                    <source src="images/jendpoint.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+                <button id="maximizeVideo" class="video-maximize-btn">
+                    <i class="fas fa-expand"></i>
+                </button>
+				
+            </div>
+        </div>
+		 <p>
+
+💡Quickly locate and manage all RESTful endpoints in your Java project! 
+		 </p>
+
+		<div class="post-actions">
+   
+</div>
+<div id="commentSection-churnVideo" class="comment-section" style="display: none;">
+   
+</div>
+   
+    </div>
+	
+	  
+</div>
+<div class="" >
+      <div class=" w3-round  w3-center" Style="max-width:100%;">
+        <div class="w3-container">
+          <a href="https://github.com/Leupesquisa/churn-prediction" class="btn" target="_blank">
+		JEndpoint is a VS Code extension for testing Java endpoints quickly and efficiently. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.
+				<br/>
+		<i class="fab fa-github"></i> See more</a>
+	
+        </div>
+      </div>
+	  </div>
+		
+		
+		
+		
+		<!-- Middle Column 2 -->
+<div class="w3-col m7 project-video-container">
+    <div class="w3-container w3-card-2 w3-white w3-round w3-margin project-post">
+        <div class="post-header">
+            <h4 class="post-author">Woozydata – Maven Library
+                
+            </h4>
+        </div>
+        <hr class="w3-clear">
+        <div class="post-content">
+            
+            <div class="video-wrapper">
+                <video id="churnVideo" class="responsive-video" autoplay loop muted playsinline>
+                    <source src="images/woozydata.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+                <button id="maximizeVideo" class="video-maximize-btn">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
+        </div>
+		 <p>
+
+💡 Data analysis library designed to simplify complex tasks like data cleaning, exporting, statistical analysis, and modeling.
+Available on Maven Central Repositoy, and mvnrepository		 </p>
+		<div class="post-actions">
+    
+</div>
+<div id="commentSection-churnVideo" class="comment-section" style="display: none;">
+    
+    <div id="comments-churnVideo"></div>
+</div>
+	
+   
+    </div>
+</div>
+
+
+      <div class=" w3-round  w3-center" Style="max-width:100%;">
+        <div class="w3-container">
+          <a href="https://github.com/Leupesquisa/churn-prediction" class="btn" target="_blank">
+		Java library designed to simplify complex tasks like data cleaning, exporting, statistical analysis, and modeling..
+		<br/>
+		<i class="fab fa-github"></i> See more</a>
+	
+        </div>
+      </div>
+	
+	  
+		
+		
+		
+		
+		
+		
+
+<!-- Middle Column 3 -->
+<div class="w3-col m7 project-video-container">
+    <div class="w3-container w3-card-2 w3-white w3-round w3-margin project-post">
+        <div class="post-header">
+            <h4 class="post-author">Churn Prediction – ML Customer Retention
+                
+            </h4>
+        </div>
+        <hr class="w3-clear">
+        <div class="post-content">
+            <p class="post-text">💡Discover how ML can predict your customers’ future!</p>
+            <div class="video-wrapper">
+                <video id="churnVideo" class="responsive-video" autoplay loop muted playsinline>
+                    <source src="C://Users/dell/Documents/Bandicam/churnprediction.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+                <button id="maximizeVideo" class="video-maximize-btn">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
+        </div>
+		 <p>
+
+Churn Prediction, an advanced system built with Python, MongoDB, and Machine Learning, designed to analyze customer behavior and accurately predict churn before it’s too late.
+		 </p>
+		<div class="post-actions">
+   
+</div>
+<div id="commentSection-churnVideo" class="comment-section" style="display: none;">
+    
+    <div id="comments-churnVideo"></div>
+</div>
+		
+		
+		
+		
+   
+    </div>
+</div>
+
+
+      <div class=" w3-round  w3-center" Style="max-width:100%;">
+        <div class="w3-container">
+          <a href="https://github.com/Leupesquisa/churn-prediction" class="btn" target="_blank">
+		This project aims to predict customer churn using machine learning. It includes a front-end built with React and a back-end built with Django, interfacing with a MongoDB database.
+		<br/>
+		<i class="fab fa-github"></i> See more</a>
+	
+        </div>
+      </div>
+	  </div>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	   <div class="work-list">
 		
 		    <div class="work">
                 <img src="images/work-3.png">
                 <div class="layer">
-                     <h3>woozydata</h3>
+				
+                     <h3><i class="fas fa-folder"></i> Java - Stock Market</h3>
 					
-                    <p>Data analysis library designed to simplify complex tasks like data cleaning, exporting, statistical analysis, and modeling. </p>
-					
-					<p><div class="tech-icons">
-						<div class="tech-box">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="40" alt="java logo"  />
-							<span>Java</span>
-						</div>
-						<div class="tech-box">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" height="40" alt="mongodb logo"  />
-							<span>MongoDB</span>
-					  </div>
-						
-						<!-- Adicione mais caixas conforme necessário -->
-					</div></p>
-					<p><div class="tech-icons">
-			<div class="tech-box">
-							
-							<span>Springboot</span>
-						</div>
-						
-						<div class="tech-box">
-							
-							<span>Data analysis </span>
-						</div>
-						
-						
-						
-						<!-- Adicione mais caixas conforme necessário -->
-					</div></p>
+                    <p>A real-time stock market analysis platform built with Quarkus, enabling fast data processing and predictive insights for investors.
+					</p>
+					 <p>
+					🛠: Java, Quarkus, MySQL, GraphQL, Financial Data Processing
+					 </p>
+									
+				
 					
 					
-                    <a href="apidocs/index.html"><i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://github.com/Leupesquisa/stock-market/tree/main/stock-market-quarkus"><i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
 		
@@ -549,80 +941,90 @@ Statistical Data Analysis</span>
                 <img src="images/work-1.png">
                 <div class="layer">
 				
-                    <h3>churn-prediction</h3>
+                    <h3><i class="fas fa-folder"></i> Netflix Clone</h3>
+					<p>An interactive Netflix clone, built with React and MySQL, featuring intuitive navigation, dynamic streaming, and personalized content.
+					</p>
+					 <p>
+					🛠: React, Java, Spring Boot, MySQL, REST API.
+					 </p>
+				
 					
-                    <p>Web application to predict the likelihood of customers canceling their services based on historical data</p>
-					
-					<p><div class="tech-icons">
-						<div class="tech-box">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" alt="python logo"  />
-							<span>Python</span>
-						</div>
-						<div class="tech-box">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" height="40" alt="mongodb logo"  />
-							<span>MongoDB</span>
-						</div>
-						<div class="tech-box">
-							  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" alt="react logo"  />
-							<span>React</span>
-						</div>
-						<!-- Adicione mais caixas conforme necessário -->
-					</div></p>
-					<p><div class="tech-icons">
-						<div class="tech-box">
-												<span> Django</span>
-						</div>
-						
-						<div class="tech-box">
-							
-							<span> Machine learning</span>
-						</div>
-						
-						<!-- Adicione mais caixas conforme necessário -->
-					</div></p>
-					
-                    <a href="https://github.com/Leupesquisa/churn-prediction"><i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://github.com/Leupesquisa/myportfolio/demo/netflix"><i class="fas fa-external-link-alt"></i></a>
 					
                 </div>
             </div>
             <div class="work">
                 <img src="images/work-2.png">
                 <div class="layer">
-                    <h3>n239</h3>
+                    <h3><i class="fas fa-folder"></i> n239</h3>
 					
-                    <p>Spring Boot application with a web app in Angular and a REST API for related data calls</p>
+                    <p>A Spring Boot & Angular web app with a REST API and MySQL database, enabling scalable data management.</p>
 					
-					<p><div class="tech-icons">
-						<div class="tech-box">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="40" alt="java logo"  />
-							<span>Java</span>
-						</div>
-						<div class="tech-box">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="40" alt="mysql logo"  />
-							<span>MySQL</span>
-						</div>
-						<div class="tech-box">
-							 
-							<span>JSP</span>
-						</div>
-						<!-- Adicione mais caixas conforme necessário -->
-					</div></p>
-					<p><div class="tech-icons">
-
-						
-						<div class="tech-box">
-							
-							<span> Docker </span>
-						</div>
-						<div class="tech-box">
-							
-							<span> CI/CD pipelines</span>
-						</div>
-						
-						<!-- Adicione mais caixas conforme necessário -->
-					</div></p>
-					
+					 <p>
+				     🛠 Java, Spring Boot, Angular, MySQL
+					 </p>
+				
                     <a href="https://github.com/Leupesquisa/n239"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        
+        </div>
+				
+	
+		
+		
+		 <div class="work-list">
+		
+		    <div class="work">
+                <img src="images/work-3.png">
+                <div class="layer">
+                     <h3><i class="fas fa-folder"></i> Visa Credit Card</h3>
+					
+                    <p>A data analysis library for cleaning, exporting, and modeling financial data, ideal for fraud detection and credit scoring. </p>
+					
+					<p>🛠 Vue.js, Spring Boot, Machine Learning, Data Analytics</p>
+					<p><div class="tech-icons">
+		
+						
+						
+						
+						<!-- Adicione mais caixas conforme necessário -->
+					</div></p>
+					
+					
+                    <a href="https://github.com/Leupesquisa/demo/creditcard"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+		
+            <div class="work">
+			 
+                <img src="images/work-1.png">
+                <div class="layer">
+				
+                    <h3><i class="fas fa-folder"></i> Car 3D Rendering</h3>
+					
+                    <p>A platform for car performance and visual effect simulations, built with Angular for interactive and realistic experiences.</p>
+					
+					<p>🛠 Angular, 3D Rendering, UI/UX
+
+</p>
+				
+					
+                    <a href="https://github.com/Leupesquisa/demo/caruiux"><i class="fas fa-external-link-alt"></i></a>
+					
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-2.png">
+                <div class="layer">
+                    <h3><i class="fas fa-folder"></i> Music Player</h3>
+					
+                    <p>A web-based music player, developed with Spring Boot and Angular, enabling audio streaming, custom playlists, and API integration.</p>
+					
+					<p>🛠 Angular, Spring Boot, MySQL</p>
+					
+					
+                    <a href="https://github.com/Leupesquisa/demo/musicplayer"><i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
         
@@ -633,11 +1035,111 @@ Statistical Data Analysis</span>
 					
 		
         <a href="https://github.com/Leupesquisa" class="btn"><i class="fab fa-github"></i> See more</a>
+	  
+	  
+
+
     </div>
 </div>
 
 
 <script>
+// Function to handle likes
+function likePost(postId) {
+    // Check if the user has already liked this post
+    const hasLiked = localStorage.getItem(`hasLiked-${postId}`);
+    if (hasLiked) {
+        alert("You have already liked this post!");
+        return; // Prevent the user from liking again
+    }
+
+    // Increment the like count
+    let likeCount = localStorage.getItem(`likeCount-${postId}`) || 0;
+    likeCount = parseInt(likeCount) + 1;
+    localStorage.setItem(`likeCount-${postId}`, likeCount);
+
+    // Update the like count in the UI
+    document.getElementById(`likeCount-${postId}`).innerText = likeCount;
+
+    // Mark that the user has liked this post
+    localStorage.setItem(`hasLiked-${postId}`, true);
+}
+
+// Function to toggle the comment section visibility
+function toggleCommentSection(postId) {
+    const commentSection = document.getElementById(`commentSection-${postId}`);
+    commentSection.style.display = commentSection.style.display === 'none' ? 'block' : 'none';
+}
+
+// Function to add a comment
+function addComment(postId) {
+    const commentInput = document.getElementById(`commentInput-${postId}`);
+    const commentText = commentInput.value.trim();
+    if (commentText) {
+        let comments = JSON.parse(localStorage.getItem(`comments-${postId}`)) || [];
+        comments.push(commentText);
+        localStorage.setItem(`comments-${postId}`, JSON.stringify(comments));
+        displayComments(postId);
+        commentInput.value = '';
+    }
+}
+
+// Function to display comments
+function displayComments(postId) {
+    const commentsContainer = document.getElementById(`comments-${postId}`);
+    const comments = JSON.parse(localStorage.getItem(`comments-${postId}`)) || [];
+    commentsContainer.innerHTML = comments.map(comment => `<div class="comment">${comment}</div>`).join('');
+}
+
+// Load likes and comments when the page loads
+window.onload = function () {
+    const postIds = ['churnVideo']; // Add more post IDs here if needed
+    postIds.forEach(postId => {
+        const likeCount = localStorage.getItem(`likeCount-${postId}`) || 0;
+        document.getElementById(`likeCount-${postId}`).innerText = likeCount;
+        displayComments(postId);
+    });
+};
+
+// Carregar likes e comentários ao carregar a página
+window.onload = function() {
+    const postIds = ['churnVideo']; // Adicione mais IDs de postagens aqui, se necessário
+    postIds.forEach(postId => {
+        const likeCount = localStorage.getItem(`likeCount-${postId}`) || 0;
+        document.getElementById(`likeCount-${postId}`).innerText = likeCount;
+        displayComments(postId);
+    });
+};
+
+document.getElementById('maximizeVideo').addEventListener('click', function(event) {
+    event.preventDefault();
+    let videoElement = document.getElementById('churnVideo');
+
+    if (videoElement.requestFullscreen) {
+        videoElement.requestFullscreen();
+    } else if (videoElement.mozRequestFullScreen) { // Firefox
+        videoElement.mozRequestFullScreen();
+    } else if (videoElement.webkitRequestFullscreen) { // Chrome, Safari, Opera
+        videoElement.webkitRequestFullscreen();
+    } else if (videoElement.msRequestFullscreen) { // IE/Edge
+        videoElement.msRequestFullscreen();
+    }
+});
+        // Função para adicionar animação ao rolar a página
+        function revealProjects() {
+            const projects = document.querySelectorAll(".project-card");
+            const windowHeight = window.innerHeight;
+
+            projects.forEach((project) => {
+                const positionFromTop = project.getBoundingClientRect().top;
+                if (positionFromTop - windowHeight < -100) {
+                    project.classList.add("show");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealProjects);
+        window.addEventListener("load", revealProjects);
 
 document.getElementById('maximizeVideo').addEventListener('click', function(event) {
     event.preventDefault();
@@ -679,11 +1181,6 @@ document.getElementById('maximizeVideo').addEventListener('click', function(even
         event.currentTarget.classList.add("active-link2");
         document.getElementById(tabname2).classList.add("active-tab2");
     }
-	
-
-</script>
-
-<script>
 
     var sidemeu = document.getElementById("sidemenu");
 
@@ -694,8 +1191,7 @@ document.getElementById('maximizeVideo').addEventListener('click', function(even
         sidemeu.style.right = "-200px";
     }
 
-</script>
-<script>
+
     const scriptURL = '< add you own link here >' // add your own app script link here
     const form = document.forms['submit-to-google-sheet']
     const msg = document.getElementById("msg")
